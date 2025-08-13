@@ -15,11 +15,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="bn" className="bg-[#fffdfd]">
-  <body className={`min-h-screen bg-[#fffdfd] ${notoSans.variable} antialiased`}>
-    <Navbar />
-    {children}
-  </body>
-</html>
-
+      <body
+        className={`min-h-screen bg-[#fffdfd] ${notoSans.variable} antialiased`}
+      >
+        <nav className="px-[2%] xl:px-[14%]">
+          <Navbar />
+        </nav>
+        {children}
+      </body>
+    </html>
   );
 }

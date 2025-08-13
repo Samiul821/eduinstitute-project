@@ -105,7 +105,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`max-w-[1320px] mx-auto mt-4 py-3 px-5 rounded-xl bg-white shadow-sm transition-all duration-300 ${
+      className={`mt-4 py-3 px-5 rounded-xl bg-white shadow-sm transition-all duration-300 ${
         scrolled ? "border-b border-gray-200" : ""
       }`}
     >
@@ -122,7 +122,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-1 items-center">
+        <div className="hidden xl:flex space-x-1 items-center">
           {navItems.map((item, idx) =>
             item.items ? (
               <div key={idx} className="relative group">
@@ -194,7 +194,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <button
             onClick={toggleMenu}
             className="text-gray-800 text-2xl focus:outline-none"
@@ -208,7 +208,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="lg:hidden bg-white p-4 mt-2 rounded-xl shadow-md space-y-2"
+            className="xl:hidden bg-white p-4 mt-2 rounded-xl shadow-md space-y-2"
             initial="hidden"
             animate="visible"
             exit="hidden"
