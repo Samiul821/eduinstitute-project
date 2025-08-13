@@ -9,40 +9,61 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useState } from "react";
-
-const slides = [
-  {
-    img: "/assest/header1.png",
-    text: "স্বাগতম এক্সওয়াইজেড স্কুল এবং <br /> কলেজ এর পক্ষ থেকে!",
-  },
-  {
-    img: "/assest/header2.png",
-    text: "স্বাগতম এক্সওয়াইজেড স্কুল এবং <br /> কলেজ এর পক্ষ থেকে!",
-  },
-  {
-    img: "/assest/header3.png",
-    text: "স্বাগতম এক্সওয়াইজেড স্কুল এবং <br /> কলেজ এর পক্ষ থেকে!",
-  },
-];
+import { useState, useContext } from "react";
+import { LanguageContext } from "@/context/LanguageContext";
 
 export default function HeaderCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const { language } = useContext(LanguageContext); // LanguageContext use
+
+  const slides = {
+    bn: [
+      {
+        img: "/assest/header1.png",
+        text: "স্বাগতম এক্সওয়াইজেড স্কুল এবং <br /> কলেজ এর পক্ষ থেকে!",
+      },
+      {
+        img: "/assest/header2.png",
+        text: "স্বাগতম এক্সওয়াইজেড স্কুল এবং <br /> কলেজ এর পক্ষ থেকে!",
+      },
+      {
+        img: "/assest/header3.png",
+        text: "স্বাগতম এক্সওয়াইজেড স্কুল এবং <br /> কলেজ এর পক্ষ থেকে!",
+      },
+    ],
+    en: [
+      {
+        img: "/assest/header1.png",
+        text: "Welcome from XOYZED School and <br /> College!",
+      },
+      {
+        img: "/assest/header2.png",
+        text: "Welcome from XOYZED School and <br /> College!",
+      },
+      {
+        img: "/assest/header3.png",
+        text: "Welcome from XOYZED School and <br /> College!",
+      },
+    ],
+  };
+
+  const currentSlides = slides[language]; // Active language slides
 
   return (
     <div className="relative w-full">
       <Carousel
         autoSlide
         interval={2000}
-        onSlideChange={(index) => setActiveIndex(index)} // Active slide track
+        onSlideChange={(index) => setActiveIndex(index)}
       >
         <CarouselContent>
-          {slides.map((slide, index) => (
+          {currentSlides.map((slide, index) => (
             <CarouselItem key={index}>
               <div className="relative w-full h-[60vh]">
                 <Image
                   src={slide.img}
-                  alt={slide.text}
+                  alt={slide.text.replace(/<[^>]+>/g, "")}
                   fill
                   priority
                   unoptimized
@@ -57,7 +78,7 @@ export default function HeaderCarousel() {
                       initial={{ opacity: 0, y: 50 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 50 }}
-                      transition={{ duration: 0.8, delay: 0.5 }} // delay
+                      transition={{ duration: 0.8, delay: 0.5 }}
                       className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent rounded-b-lg"
                     >
                       <h2

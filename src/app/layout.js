@@ -1,6 +1,7 @@
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const notoSans = Noto_Sans({
   subsets: ["bengali", "latin"], // Bengali এবং Latin support
@@ -18,10 +19,12 @@ export default function RootLayout({ children }) {
       <body
         className={`min-h-screen bg-[#fffdfd] ${notoSans.variable} antialiased`}
       >
-        <nav className="px-[2%] xl:px-[14%]">
-          <Navbar />
-        </nav>
-        {children}
+        <LanguageProvider>
+          <nav className="px-[2%] xl:px-[14%]">
+            <Navbar />
+          </nav>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
