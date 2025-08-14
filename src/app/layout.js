@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 const notoSans = Noto_Sans({
-  subsets: ["bengali", "latin"], // Bengali এবং Latin support
+  subsets: ["bengali", "latin"],
   variable: "--font-noto-sans",
 });
 
@@ -15,9 +15,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="bn" className="bg-[#fffdfd]">
+    <html lang="bn" className="bg-[#fcf7f7]">
       <body
-        className={`min-h-screen bg-[#fffdfd] ${notoSans.variable} antialiased`}
+        className={`min-h-screen bg-[#fcf7f7] ${notoSans.variable} antialiased`}
       >
         <LanguageProvider>
           <nav className="px-[2%] xl:px-[14%]">

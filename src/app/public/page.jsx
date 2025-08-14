@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import HeaderCarousel from "@/components/HeaderCarousel";
 import React from "react";
 
@@ -8,13 +9,14 @@ export default function Home() {
         <HeaderCarousel></HeaderCarousel>
       </header>
       {/* 6 section layout */}
-          <div className="grid lg:grid-cols-3 gap-6 mt-10 items-stretch">
+      <div className="grid lg:grid-cols-3 gap-6 mt-10 items-stretch">
         {/* Main Sections - left/center 2 columns */}
         <div className="col-span-2 grid grid-rows-3 gap-6">
-          <div>Main section 1</div>
+          <section>
+            <About></About>
+          </section>
           <div>Main section 2</div>
           <div>Main section 3</div>
-          
         </div>
 
         {/* Aside Sections - right 1 column */}
