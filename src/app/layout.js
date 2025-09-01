@@ -15,9 +15,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="bn" className="bg-[#fcf7f7]">
+    <html lang="bn" className="bg-gray-50">
       <body
-        className={`min-h-screen bg-[#fcf7f7] ${notoSans.variable} antialiased`}
+        className={`min-h-screen bg-gray-50 ${notoSans.variable} antialiased`}
       >
         <LanguageProvider>
           <nav className="px-[2%] xl:px-[14%]">
