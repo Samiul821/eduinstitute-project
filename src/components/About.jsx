@@ -6,8 +6,6 @@ import Image from "next/image";
 
 export default function About() {
   const { language } = useContext(LanguageContext);
-
-  // Dynamic text based on language
   const content = {
     en: {
       title: "About the Institution",
