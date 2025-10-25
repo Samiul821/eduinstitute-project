@@ -2,6 +2,7 @@ import About from "@/components/About";
 import HeaderCarousel from "@/components/HeaderCarousel";
 import ImportantLinks from "@/components/ImportantLinks";
 import NoticeBoard from "@/components/NoticeBoard";
+import OtherLinks from "@/components/OtherLinks";
 import React from "react";
 
 export default function Home() {
@@ -11,23 +12,22 @@ export default function Home() {
         <HeaderCarousel></HeaderCarousel>
       </header>
       {/* 6 section layout */}
-      <div className="grid lg:grid-cols-3 mt-10 items-stretch">
-        {/* Main Sections - left/center 2 columns */}
-        <div className="col-span-2 grid grid-rows-3 gap-6">
-          <section>
-            <About></About>
-          </section>
-          <div>Main section 2</div>
-          <div>Main section 3</div>
-        </div>
+      <div className="lg:flex lg:gap-6 mt-10">
+  {/* Left 2-column sections */}
+  <div className="lg:flex-1 space-y-6">
+    <About />
+    <div className="h-[200px]">Main section 2</div>
+    <div>Main section 3</div>
+  </div>
 
-        {/* Aside Sections - right 1 column */}
-        <div className="grid grid-rows-3 gap-6">
-          <section><NoticeBoard /></section>
-          <div><ImportantLinks /></div>
-          <div>Aside section3</div>
-        </div>
-      </div>
+  {/* Right 1-column sections */}
+  <div className="lg:w-[424px] space-y-6">
+    <NoticeBoard />
+    <ImportantLinks />
+    <OtherLinks />
+  </div>
+</div>
+
     </div>
   );
 }
