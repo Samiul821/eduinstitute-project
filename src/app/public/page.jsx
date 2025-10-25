@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import HeaderCarousel from "@/components/HeaderCarousel";
+import ImportantLinks from "@/components/ImportantLinks";
 import NoticeBoard from "@/components/NoticeBoard";
 import React from "react";
 
@@ -23,7 +24,7 @@ export default function Home() {
         {/* Aside Sections - right 1 column */}
         <div className="grid grid-rows-3 gap-6">
           <section><NoticeBoard /></section>
-          <div>Aside section2</div>
+          <div><ImportantLinks /></div>
           <div>Aside section3</div>
         </div>
       </div>
