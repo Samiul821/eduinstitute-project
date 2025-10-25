@@ -1,7 +1,6 @@
 import { GrAnnounce } from "react-icons/gr";
 import { AlertCircle } from "lucide-react";
 
-// JS version, interface বাদ দেওয়া হলো
 const notices = [
   {
     id: 1,
@@ -27,7 +26,7 @@ const notices = [
 
 export default function NoticeBoard() {
   return (
-    <div className="py-6 px-4 bg-gray-100">
+    <div className="py-6 px-4 bg-gray-100 w-full">
       {/* Header */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-center flex items-center justify-center gap-3">
@@ -37,27 +36,36 @@ export default function NoticeBoard() {
       </div>
 
       {/* Notices List */}
-      <div className="max-w-2xl mx-auto space-y-3 mb-8">
+      <div className="space-y-3 mb-8">
         {notices.map((notice) => (
           <div
             key={notice.id}
-            className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-lg hover:shadow-sm transition-shadow"
+            className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-lg
+                       hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out"
           >
             {/* Red Alert Icon */}
             <div className="flex-shrink-0">
-              <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+              <div
+                className="w-10 h-10 bg-red-400 rounded-full flex items-center justify-center
+                              hover:bg-red-500 transition-colors duration-300 ease-in-out"
+              >
                 <AlertCircle className="w-6 h-6 text-white" />
               </div>
             </div>
 
             {/* Notice Text */}
             <div className="flex-grow">
-              <p className="text-gray-700 text-sm leading-relaxed">{notice.title}</p>
+              <p className="text-[#2c3333] font-semibold leading-relaxed">
+                {notice.title}
+              </p>
             </div>
 
             {/* Details Link */}
             <div className="flex-shrink-0">
-              <button className="text-teal-500 hover:text-teal-600 font-medium text-sm whitespace-nowrap">
+              <button
+                className="py-2 px-3 rounded-full text-[#019267] bg-[#e6f4f0] text-sm font-semibold
+                                 hover:text-white hover:bg-[#019267] transition-colors duration-300 ease-in-out"
+              >
                 বিস্তারিত
               </button>
             </div>
@@ -67,7 +75,10 @@ export default function NoticeBoard() {
 
       {/* All Notices Button */}
       <div className="flex justify-center">
-        <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+        <button
+          className="py-[13px] px-4 font-semibold rounded-xl text-white bg-[#019267]
+                           hover:text-[#019267] hover:bg-[#e6f4f0] transition-colors duration-300 ease-in-out"
+        >
           সকল নোটিশ →
         </button>
       </div>
