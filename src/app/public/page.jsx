@@ -10,7 +10,7 @@ export default function Home() {
         <HeaderCarousel></HeaderCarousel>
       </header>
       {/* 6 section layout */}
-      <div className="grid lg:grid-cols-3 gap-6 mt-10 items-stretch">
+      <div className="grid lg:grid-cols-3 mt-10 items-stretch">
         {/* Main Sections - left/center 2 columns */}
         <div className="col-span-2 grid grid-rows-3 gap-6">
           <section>

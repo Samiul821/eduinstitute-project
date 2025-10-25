@@ -29,7 +29,7 @@ export default function About() {
 
   return (
     <div className="flex relative">
-      <div className="relative w-[424px] h-[560px]">
+      <div className="relative w-[424px] h-[520px]">
         <Image
           src="/assest/about-img.png"
           alt="about img"

@@ -26,7 +26,7 @@ const notices = [
 
 export default function NoticeBoard() {
   return (
-    <div className="py-6 px-4 bg-gray-100 w-full">
+    <div className="py-6 px-4 bg-gray-100">
       {/* Header */}
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-center flex items-center justify-center gap-3">
@@ -40,7 +40,7 @@ export default function NoticeBoard() {
         {notices.map((notice) => (
           <div
             key={notice.id}
-            className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-lg
+            className="flex max-h-[64px] items-center gap-4 p-4 bg-white border border-gray-200 rounded-lg
                        hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out"
           >
             {/* Red Alert Icon */}
@@ -55,7 +55,7 @@ export default function NoticeBoard() {
 
             {/* Notice Text */}
             <div className="flex-grow">
-              <p className="text-[#2c3333] font-semibold leading-relaxed">
+              <p className="text-[#2c3333] font-semibold leading-relaxed line-clamp-2">
                 {notice.title}
               </p>
             </div>
