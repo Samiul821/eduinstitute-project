@@ -3,7 +3,6 @@ import HeaderCarousel from "@/components/HeaderCarousel";
 import ImportantLinks from "@/components/ImportantLinks";
 import NoticeBoard from "@/components/NoticeBoard";
 import OtherLinks from "@/components/OtherLinks";
-import React from "react";
 
 export default function Home() {
   return (
